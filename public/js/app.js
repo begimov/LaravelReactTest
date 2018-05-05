@@ -54946,6 +54946,8 @@ var Name = function (_Component) {
     _createClass(Name, [{
         key: 'render',
         value: function render() {
+            var clock = false ? React.createElement(Clock, null) : 'A';
+            // return null;
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'container' },
@@ -54974,7 +54976,12 @@ var Name = function (_Component) {
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Clock, null),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Clock, null)
+                                clock,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                                false ? React.createElement(Clock, null) : 'B',
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                                true && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Clock, null),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
                             )
                         )
                     )
@@ -55035,40 +55042,43 @@ var Clock = function (_Component2) {
         value: function render() {
             var _this4 = this;
 
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'h2',
-                    null,
-                    this.state.date.toLocaleTimeString()
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'p',
-                    null,
-                    this.state.name
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'p',
+            if (true) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
                     null,
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'button',
-                        { onClick: this.handleClick },
-                        'UPDATE'
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'p',
-                    null,
+                        'h2',
+                        null,
+                        this.state.date.toLocaleTimeString()
+                    ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'a',
-                        { href: '#', onClick: function onClick(e) {
-                                return _this4.handleLinkClick(1, e);
-                            } },
-                        'CLICK'
+                        'p',
+                        null,
+                        this.state.name
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'button',
+                            { onClick: this.handleClick },
+                            'UPDATE'
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'a',
+                            { href: '#', onClick: function onClick(e) {
+                                    return _this4.handleLinkClick(1, e);
+                                } },
+                            'CLICK'
+                        )
                     )
-                )
-            );
+                );
+            }
+            return 'A';
         }
     }, {
         key: 'handleClick',

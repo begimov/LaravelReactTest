@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 export default class Name extends Component {
     render() {
+        const clock =  false ? <Clock /> : 'A';
+        // return null;
         return (
             <div className="container">
                 <div className="row justify-content-center">
@@ -16,7 +18,12 @@ export default class Name extends Component {
                                 <Welcome name='AAABC' /><br /><br />
 
                                 <Clock /><br />
-                                <Clock />
+
+                                {clock}<br />
+
+                                {false ? <Clock /> : 'B'}<br />
+
+                                {true && <Clock />}<br />
 
                             </div>
                         </div>
@@ -55,14 +62,17 @@ class Clock extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <h2>{this.state.date.toLocaleTimeString()}</h2>
-                <p>{this.state.name}</p>
-                <p><button onClick={this.handleClick}>UPDATE</button></p>
-                <p><a href="#" onClick={(e) => this.handleLinkClick(1, e)}>CLICK</a></p>
-            </div>
-        );
+        if (true) {
+            return (
+                <div>
+                    <h2>{this.state.date.toLocaleTimeString()}</h2>
+                    <p>{this.state.name}</p>
+                    <p><button onClick={this.handleClick}>UPDATE</button></p>
+                    <p><a href="#" onClick={(e) => this.handleLinkClick(1, e)}>CLICK</a></p>
+                </div>
+            );
+        }
+        return 'A';
     }
 
     handleClick() {
