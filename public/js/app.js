@@ -54947,6 +54947,8 @@ var Name = function (_Component) {
         key: 'render',
         value: function render() {
             var clock = false ? React.createElement(Clock, null) : 'A';
+
+            var numbers = [1, 2, 3, 4, 5];
             // return null;
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
@@ -54981,7 +54983,19 @@ var Name = function (_Component) {
                                 false ? React.createElement(Clock, null) : 'B',
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
                                 true && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Clock, null),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'ul',
+                                    null,
+                                    numbers.map(function (number) {
+                                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            'li',
+                                            { key: number.toString() },
+                                            number
+                                        );
+                                    }),
+                                    numbers
+                                )
                             )
                         )
                     )

@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 export default class Name extends Component {
     render() {
         const clock =  false ? <Clock /> : 'A';
+
+        const numbers = [1, 2, 3, 4, 5];
         // return null;
         return (
             <div className="container">
@@ -24,6 +26,11 @@ export default class Name extends Component {
                                 {false ? <Clock /> : 'B'}<br />
 
                                 {true && <Clock />}<br />
+
+                                <ul>
+                                    {numbers.map((number) => <li key={number.toString()}>{number}</li>)}
+                                    {numbers}
+                                </ul>
 
                             </div>
                         </div>
