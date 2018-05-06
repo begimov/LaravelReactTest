@@ -2,39 +2,51 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 export default class Name extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { value: '' };
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(e) {
+        this.setState({value: e.target.value});
+    }
+
     render() {
-        const clock =  false ? <Clock /> : 'A';
+        const clock = false ? <Clock /> : 'A';
 
         const numbers = [1, 2, 3, 4, 5];
         // return null;
+    
         return (
             <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-8">
-                        <div className="card">
-                            <div className="card-header">NAME</div>
+                <div>NAME</div>
 
-                            <div className="card-body">
-                                {this.props.name + '!!!'}<br /><br />
+                <div>
+                    {this.props.name + '!!!'}<br /><br />
 
-                                <Welcome name='AAABC' /><br /><br />
+                    <Welcome name='AAABC' /><br /><br />
 
-                                <Clock /><br />
+                    <Clock /><br />
 
-                                {clock}<br />
+                    {clock}<br />
 
-                                {false ? <Clock /> : 'B'}<br />
+                    {false ? <Clock /> : 'B'}<br />
 
-                                {true && <Clock />}<br />
+                    {true && <Clock />}<br />
 
-                                <ul>
-                                    {numbers.map((number) => <li key={number.toString()}>{number}</li>)}
-                                    {numbers}
-                                </ul>
+                    <ul>
+                        {numbers.map((number) => <li key={number.toString()}>{number}</li>)}
+                        {numbers}
+                    </ul>
 
-                            </div>
-                        </div>
-                    </div>
+                    <form onSubmit={(e) => {e.preventDefault(); console.log('SUBMIT')}}>
+                        <input type="text" value={this.state.value} onChange={this.handleChange} />
+                        <textarea value={this.state.value} onChange={this.handleChange} />
+                        <input type="submit" value="Submit" />
+                    </form>
+
                 </div>
             </div>
         );
@@ -83,13 +95,13 @@ class Clock extends Component {
     }
 
     handleClick() {
-        this.setState({name: 'UPDATED NAME Click'});
+        this.setState({ name: 'UPDATED NAME Click' });
     }
 
     handleLinkClick(id, e) {
         console.log(id);
         e.preventDefault();
-        this.setState({name: 'UPDATED NAME Link Click'});
+        this.setState({ name: 'UPDATED NAME Link Click' });
     }
 
     tick() {

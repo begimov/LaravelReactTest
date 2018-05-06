@@ -54937,67 +54937,75 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Name = function (_Component) {
     _inherits(Name, _Component);
 
-    function Name() {
+    function Name(props) {
         _classCallCheck(this, Name);
 
-        return _possibleConstructorReturn(this, (Name.__proto__ || Object.getPrototypeOf(Name)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Name.__proto__ || Object.getPrototypeOf(Name)).call(this, props));
+
+        _this.state = { value: '' };
+
+        _this.handleChange = _this.handleChange.bind(_this);
+        return _this;
     }
 
     _createClass(Name, [{
+        key: 'handleChange',
+        value: function handleChange(e) {
+            this.setState({ value: e.target.value });
+        }
+    }, {
         key: 'render',
         value: function render() {
             var clock = false ? React.createElement(Clock, null) : 'A';
 
             var numbers = [1, 2, 3, 4, 5];
             // return null;
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'container' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'row justify-content-center' },
+                    null,
+                    'NAME'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    null,
+                    this.props.name + '!!!',
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Welcome, { name: 'AAABC' }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Clock, null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    clock,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    false ? React.createElement(Clock, null) : 'B',
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    true && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Clock, null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'col-md-8' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'div',
-                            { className: 'card' },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'card-header' },
-                                'NAME'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'div',
-                                { className: 'card-body' },
-                                this.props.name + '!!!',
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Welcome, { name: 'AAABC' }),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Clock, null),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                                clock,
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                                false ? React.createElement(Clock, null) : 'B',
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                                true && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Clock, null),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'ul',
-                                    null,
-                                    numbers.map(function (number) {
-                                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'li',
-                                            { key: number.toString() },
-                                            number
-                                        );
-                                    }),
-                                    numbers
-                                )
-                            )
-                        )
+                        'ul',
+                        null,
+                        numbers.map(function (number) {
+                            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'li',
+                                { key: number.toString() },
+                                number
+                            );
+                        }),
+                        numbers
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'form',
+                        { onSubmit: function onSubmit(e) {
+                                e.preventDefault();console.log('SUBMIT');
+                            } },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', value: this.state.value, onChange: this.handleChange }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', { value: this.state.value, onChange: this.handleChange }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', value: 'Submit' })
                     )
                 )
             );
